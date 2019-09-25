@@ -2,7 +2,8 @@ package encryptdecrypt;
 
 import java.util.Arrays;
 
-
+//https://www.geeksforgeeks.org/caesar-cipher-in-cryptography/
+//https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
 
 public class Main {
     public static void main(String[] args) {
@@ -38,6 +39,8 @@ public class Main {
             if(!Character.isLetter(symbol)){
                 output.append(symbol);
             }else{
+                System.out.println((int)symbol);
+                System.out.println((int)symbol);
                 output.append((char)(((int)symbol +
                         shift - 97) % 26 + 97));
             }
