@@ -6,8 +6,12 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        String inputString = "we found a treasure!";
-        reverseAlphabetEncrypt(inputString);
+        //String inputString = "we found a treasure!";
+        //reverseAlphabetEncrypt(inputString);
+        String inputToShift = "welcome to hyperskill";
+        int shift = 5;
+        System.out.println(inputToShift);
+        shiftEncrypt(inputToShift, shift);
     }
     public static String reverseAlphabetEncrypt(String inputString){
         StringBuilder output = new StringBuilder();
@@ -27,6 +31,20 @@ public class Main {
         return outputString;
     }
 
-
+    public static String shiftEncrypt(String str, int shift){
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            Character symbol = str.charAt(i);
+            if(!Character.isLetter(symbol)){
+                output.append(symbol);
+            }else{
+                output.append((char)(((int)symbol +
+                        shift - 97) % 26 + 97));
+            }
+        }
+        String outputString = output.toString();
+        System.out.println(outputString);
+        return outputString;
+    }
 
 }
